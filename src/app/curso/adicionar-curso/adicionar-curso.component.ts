@@ -18,6 +18,12 @@ export class AddCourseComponent implements OnInit {
   constructor(private courseService: courseService) {}
 
   getValue(event: Event): string {
+    let regex = /\D/;
+
+    if (regex.test(this.course.hours as string)) {
+      this.course.hours = '';
+    }
+
     return ((event.target as HTMLInputElement).value = (
       event.target as HTMLInputElement
     ).value.replace(/\D/g, ''));
