@@ -1,43 +1,74 @@
 <main class="border px-4 pt-3 container-responsive me-4">
-    <h1 class="fs-4">Curso</h1>
-    <form #formSearch="ngForm">
-        <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input class="form-control mt-1" id="nome" type="text" name="nome" #nome="ngModel" [(ngModel)]="search">
-        <button (click)="searchName()" class="btn btn-primary mt-3">Pesquisar</button>
+  <h1 class="fs-4">Curso</h1>
+  <form #formSearch="ngForm">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input
+        class="form-control mt-1"
+        id="nome"
+        type="text"
+        name="nome"
+        #nome="ngModel"
+        [(ngModel)]="search"
+      />
+      <button (click)="searchName()" class="btn btn-primary mt-3">
+        Pesquisar
+      </button>
     </div>
-    </form>
-        <div class="scrollme">
-        <table id="dtHorizontalExample" class="table-responsive table table-striped table-bordered table-hover mt-4 table-sm" cellspacing="0" width="100%">
-            <tbody>
-                <tr class="text-center">
-                    <th></th>
-                    <th>Codigo</th>
-                    <th>Nome</th>
-                    <th>Instrutor</th>
-                    <th>Local</th>
-                    <th>Carga Horaria</th>
-                    <th>Data Início</th>
-                    <th>Ação</th>
-                </tr>
-                <tr *ngFor="let course of courses" class="text-center">
-                     <td><input type="checkbox" class="px-5"></td>
-                    <td>{{course.id}}</td>
-                    <td>{{course.name}}</td>
-                    <td>{{course.instructor}}</td>
-                    <td>{{course.local}}</td>
-                    <td>{{course.hours+' Hora(s)'}}</td>
-                    <td>{{course.date?.split('-')?.reverse()?.join('/')}}</td>
-                   <td class="d-flex gap-2 justify-content-center"><i [routerLink]="['/editar', course.id]" style="cursor:pointer" class="bi bi-pencil text-primary" placement="top" ngbTooltip="Editar"></i>
-                        <i placement="top" ngbTooltip="Deletar" style="cursor:pointer" (click)="delete($event, course)" class="bi bi-trash-fill text-danger"></i></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-        <a href="#" title="Novo" alt="Novo"
-        [routerLink]="['/adicionar']"
-                class="btn btn-xs btn-primary mb-3">
-              Incluir
-            </a>
+  </form>
+  <div class="scrollme">
+    <table
+      id="dtHorizontalExample"
+      class="table-responsive table table-striped table-bordered table-hover mt-4 table-sm"
+      cellspacing="0"
+      width="100%"
+    >
+      <tbody>
+        <tr class="text-center">
+          <th></th>
+          <th>Codigo</th>
+          <th>Nome</th>
+          <th>Instrutor</th>
+          <th>Local</th>
+          <th>Carga Horaria</th>
+          <th>Data Início</th>
+          <th>Ação</th>
+        </tr>
+        <tr *ngFor="let course of courses" class="text-center">
+          <td><input type="checkbox" class="px-5" /></td>
+          <td>{{ course.id }}</td>
+          <td>{{ course.name }}</td>
+          <td>{{ course.instructor }}</td>
+          <td>{{ course.local }}</td>
+          <td>{{ course.hours + " Hora(s)" }}</td>
+          <td>{{ course.date?.split("-")?.reverse()?.join("/") }}</td>
+          <td class="d-flex gap-2 justify-content-center">
+            <i
+              [routerLink]="['/editar', course.id]"
+              style="cursor: pointer"
+              class="bi bi-pencil text-primary"
+              placement="top"
+              ngbTooltip="Editar"
+            ></i>
+            <i
+              placement="top"
+              ngbTooltip="Deletar"
+              style="cursor: pointer"
+              (click)="delete($event, course)"
+              class="bi bi-trash-fill text-danger"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <a
+    href="#"
+    title="Novo"
+    alt="Novo"
+    [routerLink]="['/adicionar']"
+    class="btn btn-xs btn-primary mb-3"
+  >
+    Incluir
+  </a>
 </main>
-
