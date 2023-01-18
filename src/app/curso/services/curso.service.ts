@@ -13,7 +13,7 @@ export class courseService {
   allCourses(): Course[] {
     const courses = localStorage[LOCAL]// vai criar uma variavel local
     
-    return courses ? JSON.parse(courses) : [] 
+    return courses ? JSON.parse(courses) : [{id:1,name:'Angular', instructor:'Genival', local:'Softex', hours:36, date:'2020-02-03'},{id:2,name:'Java', instructor:'Genival', local:'Softex', hours:60, date:'2020-02-06'}] 
   }
 
   addCourse(course:Course): void {
