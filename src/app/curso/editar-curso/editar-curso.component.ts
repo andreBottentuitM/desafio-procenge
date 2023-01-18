@@ -47,7 +47,7 @@ export class EditCourseComponent {
     ) {
       this.showCorrect = true;
       setTimeout(() => {
-        this.showIncorrect = false;
+        this.showCorrect = false;
       }, 2000);
 
       this.courseService.editCourse(this.course);
