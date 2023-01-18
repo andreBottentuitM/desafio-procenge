@@ -11,7 +11,8 @@ export class courseService {
 
   allCourses(): Course[] {
     const courses = localStorage[LOCAL]; // vai criar uma variavel local
-
+   
+    
     return courses
       ? JSON.parse(courses)
       : [
