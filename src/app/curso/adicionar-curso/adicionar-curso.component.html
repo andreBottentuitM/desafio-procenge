@@ -1,0 +1,47 @@
+<main class="border px-4 pt-3 container-input">
+    <h1 class="fs-4">Curso - Incluir</h1>
+    <form #formCurso="ngForm">
+        <div class="mt-3 form-group">
+    <label for="nome">Nome:</label>
+    <input class="form-control mt-1" id="nome" type="text" name="nome" #nome="ngModel" [(ngModel)]="course.name">
+</div>
+<div class="mt-3 form-group">
+    <label for="instrutor" >Instrutor:</label>
+    <input name="instrutor" id="instrutor" #instrutor="ngModel" [(ngModel)]="course.instructor" class="form-control mt-1" type="text">
+</div>
+<div class="mt-3 form-group">
+    <label for="local" >Local:</label>
+    <input name="local" id="local" #local="ngModel" [(ngModel)]="course.local" class="form-control mt-1" type="text">
+</div>
+    <div class="container-grid mt-3 form-group">
+        <div class="g-col-6">
+    <label for="carga" >Carga Horária:</label>
+    <input name="carga" [value]="hoursInput" (input)="hoursInput=getValue($event)" id="carga" #carga="ngModel" [(ngModel)]="course.hours" class="form-control mt-1" type="text">
+</div>
+<div class="form-group">
+    <label for="date" >Data de Início:</label>
+    <input name="date" id="date" #date="ngModel" [(ngModel)]="course.date" class="form-control mt-1"  type="date">
+</div>
+</div>
+
+                           <!--ALERT-->
+                           
+<div class="text-center mt-3">
+	<ngb-toast *ngIf="showCorrect" [autohide]="true"><div> <i class="bi bi-check2-circle fs-2 text-success"></i></div> <div> O curso foi adicionado com sucesso!</div> </ngb-toast>
+</div>
+<div class="text-center mt-3">
+	<ngb-toast *ngIf="showIncorrect" [autohide]="true"><div> <i class="bi bi-x-circle fs-2 text-danger"></i></div> <div> Por favor, preencha os dados corretamente!</div> </ngb-toast>
+</div>
+
+<button type="button" 
+        class="btn btn-primary me-2 my-3"
+        (click)="addCourse()"
+
+>
+         Incluir
+        </button>
+        <a class="btn btn-primary" [routerLink]="['']">Voltar</a>
+</form>
+
+
+</main>

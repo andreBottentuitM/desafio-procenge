@@ -1,0 +1,53 @@
+<main class="border px-4 pt-3 container-input-edit">
+  <h1 class="fs-4">Curso - Editar</h1>
+
+                 <!--FORM-->
+
+  <form #formCurso="ngForm">
+    <div class="mt-3 form-group">
+      <label for="nome">Nome:</label>
+      <input class="form-control mt-1" id="nome" type="text" name="nome" [(ngModel)]="course.name" #nome="ngModel">
+    </div>
+    <div class="mt-3 form-group">
+      <label for="instrutor">Instrutor:</label>
+      <input name="instrutor" id="instrutor" class="form-control mt-1" [(ngModel)]="course.instructor"
+        #instrutor="ngModel" type="text">
+    </div>
+    <div class="mt-3 form-group">
+      <label for="local">Local:</label>
+      <input name="local" id="local" class="form-control mt-1" [(ngModel)]="course.local" #instrutor="ngModel"
+        type="text">
+    </div>
+    <div class="container-grid mt-3 form-group">
+      <div class="g-col-6">
+        <label for="carga">Carga Horária:</label>
+        <input name="carga" id="carga" [value]="hoursInput" (input)="hoursInput=getValue($event)"
+          class="form-control mt-1" [(ngModel)]="course.hours" #carga="ngModel" type="text">
+      </div>
+      <div class="form-group">
+        <label for="date">Data de Início:</label>
+        <input name="date" id="date" class="form-control mt-1" [(ngModel)]="course.date" #date="ngModel" type="date">
+      </div>
+    </div>
+
+                      <!--ALERTS-->
+
+    <div class="text-center mt-3">
+      <ngb-toast *ngIf="showCorrect" [autohide]="true">
+        <div> <i class="bi bi-check2-circle fs-2 text-success"></i></div>
+        <div> O curso foi adicionado com sucesso!</div>
+      </ngb-toast>
+    </div>
+    <div class="text-center mt-3">
+      <ngb-toast *ngIf="showIncorrect" [autohide]="true">
+        <div> <i class="bi bi-x-circle fs-2 text-danger"></i></div>
+        <div> Por favor, preencha os dados corretamente!</div>
+      </ngb-toast>
+    </div>
+
+    <button type="button" class="btn btn-primary me-2 my-3" (click)="edit()">
+      Editar
+    </button>
+    <a class="btn btn-primary" [routerLink]="['']">Voltar</a>
+  </form>
+</main>

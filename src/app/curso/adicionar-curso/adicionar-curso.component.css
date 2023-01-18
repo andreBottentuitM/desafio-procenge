@@ -1,0 +1,30 @@
+
+
+.container-input{
+    width:85vw;
+    max-width: 1300px;
+    margin-bottom:150px
+}
+
+.container-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px
+}
+
+@media (max-width:1000px){
+    .container-input{
+        width:80vw
+    }
+}
+
+@media (max-width:900px){
+    .container-input{
+        width:100vw
+    }
+
+    .container-grid{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

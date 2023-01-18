@@ -1,0 +1,28 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+body{
+    width:100%;
+  
+}
+
+.container-general{
+    display: flex;
+    width:100%;
+    max-width:1550px;
+    margin:0 auto;
+}
+
+
+@media (max-width:900px){
+    .container-general{
+        display:flex;
+        flex-direction: column;
+        margin:0 auto
+        }
+
+    .title{
+       display: flex;
+       justify-content: center;
+       font-size: 25px;
+    }    
+}

@@ -1,0 +1,46 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+#dtHorizontalExample th, td{
+    white-space: nowrap;
+}
+
+.scrollme{
+    overflow-x: auto;
+}
+
+.container-grid-modal{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:9px
+}
+
+.container-responsive{
+    width:85vw;
+    max-width: 1300px
+}
+
+@media (max-width:1200px){
+    .container-responsive{
+        width: 920px
+    }
+}
+@media (max-width:1100px){
+    .container-responsive{
+        width: 820px
+    }
+}
+
+@media (max-width:1000px){
+    .container-responsive{
+        width: 750px
+    }
+}
+
+@media (max-width:900px){
+    .container-responsive{
+        width: 100vw;
+        align-items: center;
+    }
+
+
+}
