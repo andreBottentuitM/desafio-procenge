@@ -23,7 +23,7 @@ export class Homepage {
   }
 
   searchName() {
-    let allCourses = JSON.parse(localStorage['courses']);
+    let allCourses = this.courseService.allCourses()
     return (this.courses = allCourses.filter((course: any) => {
       return course.name?.toLowerCase().includes(this.search.toLowerCase());
     }));
